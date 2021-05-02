@@ -8,15 +8,22 @@ import { makeStyles } from "@material-ui/core";
 //#5B8930 moegi onion /jade
 
 export const useStyles = makeStyles((theme) => ({
+    //Colors
+    pink: {
+        backgroundColor: "#D87C63",
+        color: "#EBF6F7"
+    },
+    crimson: {
+        backgroundColor: "#780109",
+    },
+    aijiro: {
+        backgroundColor: "#EBF6F7",
+    },
     //HomeScreen
     root: {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-    },
-    pink: {
-        backgroundColor: "#D87C63",
-        color: "#EBF6F7"
     },
     main: {
         flex: 1,
@@ -31,9 +38,6 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         textAlign: "center",
     },
-    crimson: {
-        backgroundColor: "#780109",
-    },
     //Logo
     neko: {
         height: 100,
@@ -41,5 +45,22 @@ export const useStyles = makeStyles((theme) => ({
     nekoflip: {
         height: 100,
         transform: "scaleX(-1)",
-    }
+    },
+    //ChooseScreen
+    cards: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    card: {
+        margin: 10,
+        backgroundColor: "#EBF6F7",
+        border: "1px solid #780109",
+    },
+    space: {
+        padding: 10,
+    },
+    media: {
+        width: 200,
+    },
 }));

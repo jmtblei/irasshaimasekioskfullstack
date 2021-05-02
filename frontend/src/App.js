@@ -1,3 +1,4 @@
+import { Route, BrowserRouter } from "react-router-dom";
 import {
   Container,
   createMuiTheme,
@@ -5,7 +6,9 @@ import {
   Paper,
   ThemeProvider,
 } from '@material-ui/core';
+
 import HomeScreen from "./screens/HomeScreen";
+import ChooseScreen from './screens/ChooseScreen';
 
 const theme = createMuiTheme({
   typography: {
@@ -15,8 +18,14 @@ const theme = createMuiTheme({
     },
     h2: { 
       fontWeight: "bold",
+      textShadow: "1px 1px 5px #780109",
     },
     h3: {
+      fontSize: "1.8rem",
+      fontWeight: "bold",
+      textShadow: "1px 1px 5px #780109",
+    },
+    h4: {
       fontSize: "1.8rem",
       fontWeight: "bold",
       textShadow: "1px 1px 5px #780109",
@@ -27,7 +36,9 @@ const theme = createMuiTheme({
     },
   },
   palette: {
-    primary: { main: "#780109" },
+    primary: { 
+      main: "#FFFFFF",
+    },
     secondary: {
       main: "#D87C63",
       contrastText: "#EBF6F7",
@@ -37,14 +48,17 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Container maxWidth="sm">
-          <Paper>
-            <HomeScreen></HomeScreen>
-          </Paper>
-        </Container>
-      </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Container maxWidth="sm">
+            <Paper>
+              <Route path="/" component={HomeScreen} exact={true}></Route>
+              <Route path="/choose" component={ChooseScreen} exact={true}></Route>
+            </Paper>
+          </Container>
+        </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

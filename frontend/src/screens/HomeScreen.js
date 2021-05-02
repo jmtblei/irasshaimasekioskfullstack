@@ -10,11 +10,11 @@ import { useStyles } from "../styles";
 
 import Bottom from "../components/Bottom";
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
     const styles = useStyles();
     return (
         <Card>
-            <CardActionArea>
+            <CardActionArea onClick={() => props.history.push("/choose")}>
                 <Box className={[styles.root, styles.pink]}>    
                     <Box className={[styles.main, styles.center]}>
                         <Typography
