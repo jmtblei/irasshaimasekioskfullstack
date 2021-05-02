@@ -9,9 +9,17 @@ import {
     Typography,
 } from '@material-ui/core';
 import { useStyles } from "../styles";
+import { setOrderType } from '../context/Actions';
 
 export default function ChooseScreen() {
     const styles = useStyles();
+    const { dispatch } = useContext(Store);
+
+    const chooseHandler = (orderType) => {
+        setOrderType(dispatch, orderType);
+        props.history.push("/order");
+    };
+
     return (
         <Fade in={true}>
             <Box className={[styles.root, styles.pink]}>
@@ -26,7 +34,7 @@ export default function ChooseScreen() {
                     </Typography>
                     <Box className={styles.cards}>
                         <Card className={[styles.card, styles.space]}>
-                            <CardActionArea>
+                            <CardActionArea onClick={() => chooseHandler("Eat in")}>
                                 <CardMedia
                                     component="img"
                                     image="/images/eatin.png"
@@ -46,7 +54,7 @@ export default function ChooseScreen() {
                             </CardActionArea>
                         </Card>
                         <Card className={[styles.card, styles.space]}>
-                            <CardActionArea>
+                            <CardActionArea onClick={() => chooseHandler("Take out")}>
                                 <CardMedia
                                     component="img"
                                     image="/images/takeout.png"
