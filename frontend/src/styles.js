@@ -27,7 +27,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     center: {
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
         alignItems: "center",
         textAlign: "center",
     },
@@ -35,7 +35,11 @@ export const useStyles = makeStyles((theme) => ({
         backgroundColor: "#780109",
     },
     //Logo
-    largeLogo: {
+    neko: {
         height: 100,
     },
+    nekoflip: {
+        height: 100,
+        transform: "scaleX(-1)",
+    }
 }));

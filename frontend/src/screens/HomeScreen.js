@@ -3,12 +3,12 @@ import {
     Box,
     Card,
     CardActionArea,
-    Typography
+    Typography,
 } from "@material-ui/core";
 import TouchAppIcon from "@material-ui/icons/TouchApp";
 import { useStyles } from "../styles";
 
-import Logo from "../components/Logo";
+import Bottom from "../components/Bottom";
 
 export default function HomeScreen() {
     const styles = useStyles();
@@ -25,8 +25,8 @@ export default function HomeScreen() {
                             (いらっしゃいませ！)
                         </Typography>
                         <Typography
-                            component="h2"
-                            variant="h2"
+                            component="h1"
+                            variant="h1"
                         >
                             Order <br />
                             & Pay <br />
@@ -35,13 +35,7 @@ export default function HomeScreen() {
                         <TouchAppIcon fontSize="large"></TouchAppIcon>
                     </Box>
                     <Box className={[styles.center, styles.crimson]}>
-                        <Logo large/>
-                        <Typography
-                            component="h5"
-                            variant="h5"
-                        >
-                            TOUCH TO START
-                        </Typography>
+                        <Bottom />
                     </Box>
                 </Box>
             </CardActionArea>

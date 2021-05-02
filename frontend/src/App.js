@@ -10,17 +10,20 @@ import HomeScreen from "./screens/HomeScreen";
 const theme = createMuiTheme({
   typography: {
     h1: { 
-      fontWeight: "bold" 
+      fontWeight: "bold", 
+      textShadow: "1px 1px 5px #780109",
     },
     h2: { 
-      fontWeight: "bold" 
+      fontWeight: "bold",
     },
     h3: {
-      fontSize: "2.5rem",
+      fontSize: "1.8rem",
       fontWeight: "bold",
+      textShadow: "1px 1px 5px #780109",
     },
     h5: {
       fontWeight: "bold",
+      textShadow: "1px 1px 5px #D87C63",
     },
   },
   palette: {
