@@ -63,4 +63,10 @@ export const useStyles = makeStyles((theme) => ({
     media: {
         width: 200,
     },
+    //OrderScreen
+    sideButtons: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+    },
 }));

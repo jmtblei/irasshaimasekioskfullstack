@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { 
     Box,
     Card,
@@ -10,8 +10,9 @@ import {
 } from '@material-ui/core';
 import { useStyles } from "../styles";
 import { setOrderType } from '../context/Actions';
+import { Store } from "../context/Store";
 
-export default function ChooseScreen() {
+export default function ChooseScreen(props) {
     const styles = useStyles();
     const { dispatch } = useContext(Store);
 

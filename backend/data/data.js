@@ -2,15 +2,15 @@ const data = {
     categories: [
         {
             name: "Appetizers",
-            image: "../../frontend/public/images/appetizers.jpg",
+            image: "/images/appetizers.png",
         },
         {
             name: "Entrees",
-            image: "../../frontend/public/images/entrees.jpg",
+            image: "/images/entrees.png",
         },
         {
             name: "Sushi",
-            image: "../../frontend/public/images/sushi.jpg",
+            image: "/images/sushi.png",
         },
     ],
 };
