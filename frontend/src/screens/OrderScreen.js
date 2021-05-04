@@ -50,6 +50,7 @@ export default function OrderScreen() {
                                                 className={styles.sideButtons}
                                             >
                                                 <Avatar alt={category.name} src={category.image} />
+                                                {category.name}
                                             </ListItem>
                                         ))}
                                 </>
