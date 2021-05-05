@@ -69,4 +69,12 @@ export const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         justifyContent: "flex-start",
     },
+    title: {
+        marginTop: 20,
+    },
+    menuCard: {
+        margin: 10,
+        backgroundColor: "#780109",
+        border: "1px solid #EBF6F7",
+    },
 }));
