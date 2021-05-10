@@ -18,6 +18,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     aijiro: {
         backgroundColor: "#EBF6F7",
+        color: "#780109"
     },
     //HomeScreen
     root: {
@@ -65,6 +66,10 @@ export const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
+        "&:hover": {
+            color: "#780109",
+            backgroundColor: "#EBF6F7",
+        },
     },
     title: {
         marginTop: 20,
@@ -75,13 +80,20 @@ export const useStyles = makeStyles((theme) => ({
         padding: 10,
     },
     incrementButton: {
-        backgroundColor: "#D87C63",
+        color: "#780109",
+        "&:hover": {
+            color: "#EBF6F7",
+            backgroundColor: "#780109",
+            border: "1px solid #D87C63",
+        },
     },
     largeInput: {
         width: '60px!important',
         padding: '0!important',
         fontSize: '35px!important',
         textAlign: 'center!important',
+        backgroundColor: "#FFFFFF",
+        color: "#780109",
     },
     around: {
         justifyContent: 'space-around',
@@ -94,11 +106,40 @@ export const useStyles = makeStyles((theme) => ({
         width: 250,
         color: "#EBF6F7",
         backgroundColor: "#D87C63",
+        border: "1px solid #780109",
+        "&:hover": {
+            color: "#EBF6F7",
+            backgroundColor: "#780109",
+            border: "1px solid #D87C63",
+        },    
     },
     menuCard: {
         width: 200,
         margin: 10,
         backgroundColor: "#EBF6F7",
         border: "1px solid #780109",
+    },
+    //ReviewScreen
+    betweenCenter: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+    },
+    reviewSpace: {
+        marginTop: 10,
+    },
+    media: {
+        width: 100,
+    },
+    editButton: {
+        height: 50,
+        color: "#EBF6F7",
+        backgroundColor: "#D87C63",
+        border: "1px solid #780109",
+        "&:hover": {
+            color: "#EBF6F7",
+            backgroundColor: "#780109",
+            border: "1px solid #D87C63",
+        },    
     },
 }));

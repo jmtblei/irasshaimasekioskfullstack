@@ -40,7 +40,6 @@ export default function ChooseScreen(props) {
                                     component="img"
                                     image="/images/eatin.png"
                                     alt="Eat in"
-                                    className={styles.media}
                                 />
                                     <CardContent>
                                         <Typography
@@ -60,7 +59,6 @@ export default function ChooseScreen(props) {
                                     component="img"
                                     image="/images/takeout.png"
                                     alt="Take Out"
-                                    className={styles.media}
                                 />
                                     <CardContent>
                                         <Typography

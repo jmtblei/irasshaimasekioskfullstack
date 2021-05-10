@@ -59,7 +59,7 @@ export default function OrderScreen(props) {
     }, [dispatch, categories, categoryName]);
 
     const closeHandler = () => {
-    setIsOpen(false);
+        setIsOpen(false);
     };
 
     const productClickHandler = (p) => {
@@ -82,6 +82,10 @@ export default function OrderScreen(props) {
         listProducts(dispatch, categoryName);
     };
 
+    const previewOrderHandler = () => {
+        props.history.push(`/review`);
+    };
+
     return (
         <Box className={[styles.root, styles.pink]}>
             <Box className={styles.main}>
@@ -101,6 +105,7 @@ export default function OrderScreen(props) {
                         color="primary"
                         disabled={quantity === 1}
                         onClick={(e) => quantity > 1 && setQuantity(quantity - 1)}
+                        className={styles.incrementButton}
                     >
                     <Remove />
                     </Button>
@@ -112,7 +117,6 @@ export default function OrderScreen(props) {
                             },
                         }}
                         type="number"
-                        variant="filled"
                         min={1}
                         value={quantity}
                     />
@@ -120,6 +124,7 @@ export default function OrderScreen(props) {
                         variant="contained"
                         color="primary"
                         onClick={(e) => setQuantity(quantity + 1)}
+                        className={styles.incrementButton}
                     >
                     <Add />
                     </Button>
@@ -128,7 +133,6 @@ export default function OrderScreen(props) {
                     <Button
                         onClick={cancelOrRemoveFromOrder}
                         variant="contained"
-                        color="primary"
                         size="large"
                         className={styles.largeButton}
                     >
@@ -139,7 +143,6 @@ export default function OrderScreen(props) {
                     <Button
                         onClick={addToOrderHandler}
                         variant="contained"
-                        color="primary"
                         size="large"
                         className={styles.largeButton}
                     >
@@ -186,10 +189,10 @@ export default function OrderScreen(props) {
                     </Grid>
                     <Grid item md={10}>
                         <Typography
-                        gutterBottom
-                        className={styles.title}
-                        variant="h2"
-                        component="h2"
+                            gutterBottom
+                            className={styles.title}
+                            variant="h2"
+                            component="h2"
                         >
                         {categoryName || "Main Menu"}
                         </Typography>
@@ -250,13 +253,13 @@ export default function OrderScreen(props) {
             </Box>
             <Box>
                 <Box>
-                    <Box className={[styles.space, styles.between, styles.crimson]}>
+                    <Box className={[styles.space, styles.between, styles.aijiro]}>
                         <span>My Order - {orderType}</span> 
                         <span>Items: {itemsCount}</span>
                         <span>Tax: ${taxPrice}</span>
                         <span>Total: ${totalPrice}</span>
                     </Box>
-                    <Box className={[styles.row, styles.around, styles.crimson]}>
+                    <Box className={[styles.row, styles.around, styles.aijiro]}>
                         <Button
                             onClick={() => {
                                 clearOrder(dispatch);
@@ -268,10 +271,12 @@ export default function OrderScreen(props) {
                         Cancel Order
                         </Button>
                         <Button
+                            onClick={previewOrderHandler}
+                            disabled={orderItems.length === 0}
                             variant="contained"
                             className={styles.largeButton}
                         >
-                        Done
+                        Review
                         </Button>
                     </Box>
                 </Box>
