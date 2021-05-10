@@ -60,9 +60,6 @@ export const useStyles = makeStyles((theme) => ({
     space: {
         padding: 10,
     },
-    media: {
-        width: 200,
-    },
     //OrderScreen
     sideButtons: {
         display: "flex",
@@ -71,10 +68,37 @@ export const useStyles = makeStyles((theme) => ({
     },
     title: {
         marginTop: 20,
+        marginLeft: 10,
+    },
+    row: {
+        display: 'flex',
+        padding: 10,
+    },
+    incrementButton: {
+        backgroundColor: "#D87C63",
+    },
+    largeInput: {
+        width: '60px!important',
+        padding: '0!important',
+        fontSize: '35px!important',
+        textAlign: 'center!important',
+    },
+    around: {
+        justifyContent: 'space-around',
+    },
+    between: {
+        display: "flex",
+        justifyContent: 'space-between',
+    },
+    largeButton: {
+        width: 250,
+        color: "#EBF6F7",
+        backgroundColor: "#D87C63",
     },
     menuCard: {
+        width: 200,
         margin: 10,
-        backgroundColor: "#780109",
-        border: "1px solid #EBF6F7",
+        backgroundColor: "#EBF6F7",
+        border: "1px solid #780109",
     },
 }));
