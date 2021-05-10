@@ -117,6 +117,17 @@ export const useStyles = makeStyles((theme) => ({
             border: "1px solid #D87C63",
         },    
     },
+    largeButton2: {
+        width: 250,
+        color: "#780109",
+        backgroundColor: "#EBF6F7",
+        border: "1px solid #780109",
+        "&:hover": {
+            color: "#EBF6F7",
+            backgroundColor: "#780109",
+            border: "1px solid #EBF6F7",
+        },    
+    },
     menuCard: {
         width: 200,
         margin: 10,
