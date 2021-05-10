@@ -5,7 +5,6 @@ import {
     Card,
     CardActionArea,
     CardContent,
-    CardMedia,
     Dialog,
     DialogTitle,
     Grid,
@@ -52,6 +51,10 @@ export default function ReviewScreen(props) {
         removeFromOrder(dispatch, product);
         setIsOpen(false);
     };
+
+    const procedToCheckoutHandler = () => {
+        props.history.push('/select-payment');
+      };
 
     return (
         <Box className={[styles.root, styles.pink]}>
@@ -198,6 +201,8 @@ export default function ReviewScreen(props) {
                         Back
                         </Button>
                         <Button
+                            onClick={procedToCheckoutHandler}
+                            disabled={orderItems.length === 0}
                             variant="contained"
                             className={styles.largeButton}
                         >

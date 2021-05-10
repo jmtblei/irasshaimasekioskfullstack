@@ -39,6 +39,10 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         textAlign: "center",
     },
+    centerRow: {
+        display: "flex",
+        alignItems: "center",
+    },
     //Logo
     neko: {
         height: 100,
@@ -127,9 +131,6 @@ export const useStyles = makeStyles((theme) => ({
     },
     reviewSpace: {
         marginTop: 10,
-    },
-    media: {
-        width: 100,
     },
     editButton: {
         height: 50,

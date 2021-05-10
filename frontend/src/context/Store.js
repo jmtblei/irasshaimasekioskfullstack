@@ -13,6 +13,7 @@ import {
     ORDER_ADD_ITEM,
     ORDER_REMOVE_ITEM,
     ORDER_CLEAR,
+    ORDER_SET_PAYMENT_TYPE
 } from "./Constants";
 
 export const Store = createContext();
@@ -26,6 +27,7 @@ const initialState = {
     },
     order: {
         orderType: "Eat in",
+        paymentType: "Pay here",
         orderItems: [],
         taxPrice: 0,
         totalPrice: 0,
@@ -129,6 +131,11 @@ function reducer(state, action) {
                 totalPrice: 0,
                 itemsCount: 0,
                 },
+            };
+        case ORDER_SET_PAYMENT_TYPE:
+            return {
+                ...state,
+                order: { ...state.order, paymentType: action.payload },
             };
         default: 
         return state;

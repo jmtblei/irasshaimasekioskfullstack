@@ -25,14 +25,26 @@ export default function ChooseScreen(props) {
         <Fade in={true}>
             <Box className={[styles.root, styles.pink]}>
                 <Box className={[styles.main, styles.center]}>
-                    <Typography
-                        component="h2"
-                        variant="h2"
-                        gutterBottom
-                        className={styles.center}
-                    >
-                        Where will you be eating today?
-                    </Typography>
+                    <Box className={styles.centerRow}>
+                        <img 
+                            src="/images/neko.png"
+                            alt="Food Order"
+                            className={styles.neko}
+                        ></img>
+                        <Typography
+                            component="h2"
+                            variant="h2"
+                            gutterBottom
+                            className={styles.center}
+                        >
+                            Where will you be eating today?
+                        </Typography>
+                        <img 
+                            src="/images/neko.png"
+                            alt="Food Order"
+                            className={styles.nekoflip}
+                        ></img>
+                    </Box>
                     <Box className={styles.cards}>
                         <Card className={[styles.card, styles.space]}>
                             <CardActionArea onClick={() => chooseHandler("Eat in")}>
