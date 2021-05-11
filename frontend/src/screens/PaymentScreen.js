@@ -6,6 +6,7 @@ import {
     Typography 
 } from '@material-ui/core';
 import { useStyles } from '../styles';
+
 export default function CompleteOrderScreen(props) {
   const styles = useStyles();
 
