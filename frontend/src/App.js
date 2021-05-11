@@ -13,6 +13,7 @@ import OrderScreen from "./screens/OrderScreen";
 import ReviewScreen from "./screens/ReviewScreen";
 import SelectPaymentScreen from "./screens/SelectPaymentScreen";
 import PaymentScreen from "./screens/PaymentScreen";
+import CompleteOrderScreen from "./screens/CompleteOrderScreen";
 
 const theme = createMuiTheme({
   typography: {
@@ -63,6 +64,7 @@ function App() {
               <Route path="/review" component={ReviewScreen} exact></Route>
               <Route path="/select-payment" component={SelectPaymentScreen} exact></Route>
               <Route path="/payment" component={PaymentScreen} exact></Route>
+              <Route path="/complete" component={CompleteOrderScreen} exact></Route>
             </Paper>
           </Container>
         </ThemeProvider>

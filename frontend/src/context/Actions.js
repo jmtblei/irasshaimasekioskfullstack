@@ -10,6 +10,9 @@ import {
     ORDER_REMOVE_ITEM,
     ORDER_CLEAR,
     ORDER_SET_PAYMENT_TYPE,
+    ORDER_CREATE_REQUEST,
+    ORDER_CREATE_SUCCESS,
+    ORDER_CREATE_FAIL,
 } from "./Constants";
 import axios from "axios";
 
@@ -45,6 +48,25 @@ export const setPaymentType = async (dispatch, paymentType) => {
       type: ORDER_SET_PAYMENT_TYPE,
       payload: paymentType,
     });
+};
+
+export const createOrder = async (dispatch, order) => {
+    dispatch({ type: ORDER_CREATE_REQUEST });
+    try {
+      const { data } = await axios.post("/api/orders", order);
+      dispatch({
+        type: ORDER_CREATE_SUCCESS,
+        payload: data,
+      });
+      dispatch({
+        type: ORDER_CLEAR,
+      });
+    } catch (error) {
+      dispatch({
+        type: ORDER_CREATE_FAIL,
+        payload: error.message,
+      });
+    }
 };
 
 export const listCategories = async (dispatch) => {

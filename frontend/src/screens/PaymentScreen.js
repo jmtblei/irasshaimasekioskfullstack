@@ -21,7 +21,6 @@ export default function CompleteOrderScreen(props) {
             ></img>
             <Typography
                 gutterBottom
-                className={styles.title}
                 variant="h3"
                 component="h3"
             >
