@@ -3,6 +3,7 @@ import React, {
     useReducer,
 } from 'react';
 import {
+    SCREEN_SET_WIDTH,
     ORDER_SET_TYPE,
     CATEGORY_LIST_REQUEST,
     CATEGORY_LIST_SUCCESS,
@@ -17,11 +18,15 @@ import {
     ORDER_CREATE_REQUEST,
     ORDER_CREATE_SUCCESS,
     ORDER_CREATE_FAIL,
+    ORDER_QUEUE_LIST_REQUEST,
+    ORDER_QUEUE_LIST_SUCCESS,
+    ORDER_QUEUE_LIST_FAIL,
 } from "./Constants";
 
 export const Store = createContext();
 
 const initialState = {
+    widthScreen: false,
     categoryList: {
         loading: true,
     },
@@ -39,10 +44,24 @@ const initialState = {
     orderCreate: { 
         loading: true 
     },
+    queueList: { loading: true },
 };
 
 function reducer(state, action) {
     switch(action.type) {
+        //screen
+        case SCREEN_SET_WIDTH:
+            return {
+                ...state,
+                widthScreen: true,
+            };
+        //order type
+        case ORDER_SET_TYPE:
+            return {
+                ...state,
+                order: { ...state.order, orderType: action.payload },
+            };
+        //categories
         case CATEGORY_LIST_REQUEST:
             return {
                 ...state,
@@ -58,6 +77,7 @@ function reducer(state, action) {
                 ...state,
                 categoryList: { loading: false, error: action.payload },
             };
+        //products
         case PRODUCT_LIST_REQUEST:
             return {
                 ...state,
@@ -73,11 +93,7 @@ function reducer(state, action) {
                 ...state,
                 productList: { loading: false, error: action.payload },
             };
-        case ORDER_SET_TYPE:
-            return {
-                ...state,
-                order: { ...state.order, orderType: action.payload },
-            };
+        //modyfing orders
         case ORDER_ADD_ITEM: {
             const item = action.payload;
             const existItem = state.order.orderItems.find(
@@ -138,11 +154,13 @@ function reducer(state, action) {
                 itemsCount: 0,
                 },
             };
+        //payment type
         case ORDER_SET_PAYMENT_TYPE:
             return {
                 ...state,
                 order: { ...state.order, paymentType: action.payload },
             };
+        //creating orders
         case ORDER_CREATE_REQUEST:
             return { 
                 ...state, 
@@ -157,6 +175,19 @@ function reducer(state, action) {
             return {
                 ...state,
                 orderCreate: { loading: false, error: action.payload },
+            };
+        //queue
+        case ORDER_QUEUE_LIST_REQUEST:
+            return { ...state, queueList: { loading: true } };
+        case ORDER_QUEUE_LIST_SUCCESS:
+            return {
+                ...state,
+                queueList: { loading: false, queue: action.payload },
+            };
+        case ORDER_QUEUE_LIST_FAIL:
+            return {
+                ...state,
+                queueList: { loading: false, error: action.payload },
             };
         default: 
             return state;

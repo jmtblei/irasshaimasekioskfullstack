@@ -154,4 +154,15 @@ export const useStyles = makeStyles((theme) => ({
             border: "1px solid #D87C63",
         },    
     },
+    //QueueScreen
+    queueGrids: {
+        padding: 10,
+    },
+    queueTitle: {
+        paddingTop: 20,
+        paddingLeft: 20,
+    },
+    queueNumbers: {
+        paddingLeft: 10,
+    },
 }));
