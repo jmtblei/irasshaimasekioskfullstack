@@ -4,11 +4,11 @@ import {
     Button, 
     CircularProgress, 
     Typography 
-} from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
-import { useStyles } from '../styles';
-import { createOrder } from '../context/Actions';
-import { Store } from '../context/Store';
+} from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
+import { useStyles } from "../styles";
+import { createOrder } from "../context/Actions";
+import { Store } from "../context/Store";
 
 export default function CompleteOrderScreen(props) {
   const styles = useStyles();
@@ -20,7 +20,7 @@ export default function CompleteOrderScreen(props) {
     if (order.orderItems.length > 0) {
       createOrder(dispatch, order);
     }
-  }, [order]);
+  }, [dispatch, order]);
 
   return (
     <Box className={[styles.root, styles.pink]}>
@@ -71,7 +71,7 @@ export default function CompleteOrderScreen(props) {
       </Box>
       <Box className={[styles.center, styles.space]}>
         <Button
-          onClick={() => props.history.push('/')}
+          onClick={() => props.history.push("/")}
           variant="contained"
           color="primary"
           className={styles.largeButton2}

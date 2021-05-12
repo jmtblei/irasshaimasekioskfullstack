@@ -6,10 +6,10 @@ import {
     CardContent,
     CardMedia,
     Typography,
-} from '@material-ui/core';
-import { useStyles } from '../styles';
-import { setPaymentType } from '../context/Actions';
-import { Store } from '../context/Store';
+} from "@material-ui/core";
+import { useStyles } from "../styles";
+import { setPaymentType } from "../context/Actions";
+import { Store } from "../context/Store";
 
 export default function SelectPaymentScreen(props) {
     const styles = useStyles();
@@ -17,10 +17,10 @@ export default function SelectPaymentScreen(props) {
 
     const selectHandler = (paymentType) => {
         setPaymentType(dispatch, paymentType);
-        if (paymentType === 'Pay here') {
-          props.history.push('/payment');
+        if (paymentType === "Pay here") {
+          props.history.push("/payment");
         } else {
-          props.history.push('/complete');
+          props.history.push("/complete");
         }
     };
 
@@ -48,7 +48,7 @@ export default function SelectPaymentScreen(props) {
                 </Box>
                 <Box className={styles.cards}>
                 <Card className={[styles.card, styles.space]}>
-                    <CardActionArea onClick={() => selectHandler('Pay here')}>
+                    <CardActionArea onClick={() => selectHandler("Pay here")}>
                     <CardMedia
                         component="img"
                         alt="Pay here"
@@ -67,7 +67,7 @@ export default function SelectPaymentScreen(props) {
                     </CardActionArea>
                 </Card>
                 <Card className={[styles.card, styles.space]}>
-                    <CardActionArea onClick={() => selectHandler('At counter')}>
+                    <CardActionArea onClick={() => selectHandler("At counter")}>
                     <CardMedia
                         component="img"
                         alt="At counter"

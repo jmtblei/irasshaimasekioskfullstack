@@ -10,10 +10,10 @@ import {
     Grid,
     TextField,
     Typography,
-} from '@material-ui/core';
+} from "@material-ui/core";
 import { Add, Remove } from "@material-ui/icons";
 import { useStyles } from "../styles";
-import { addToOrder, removeFromOrder } from '../context/Actions';
+import { addToOrder, removeFromOrder } from "../context/Actions";
 import { Store } from "../context/Store";
 
 export default function ReviewScreen(props) {
@@ -53,7 +53,7 @@ export default function ReviewScreen(props) {
     };
 
     const procedToCheckoutHandler = () => {
-        props.history.push('/select-payment');
+        props.history.push("/select-payment");
       };
 
     return (
@@ -128,7 +128,6 @@ export default function ReviewScreen(props) {
                     ></img>
                     <Typography
                         gutterBottom
-                        className={styles.title}
                         variant="h3"
                         component="h3"
                     >
@@ -193,7 +192,7 @@ export default function ReviewScreen(props) {
                     <Box className={[styles.row, styles.around, styles.aijiro]}>
                         <Button
                             onClick={() => {
-                                props.history.push(`/order`);
+                                props.history.push("/order");
                             }}
                             variant="contained"
                             className={styles.largeButton}

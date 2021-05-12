@@ -15,7 +15,7 @@ import {
     ListItem, 
     TextField,
     Typography,
-} from '@material-ui/core';
+} from "@material-ui/core";
 import { Add, Remove } from "@material-ui/icons";
 import { Alert } from "@material-ui/lab";
 import { useStyles } from "../styles";
@@ -25,7 +25,7 @@ import {
     addToOrder,
     removeFromOrder,
     clearOrder,
-} from '../context/Actions';
+} from "../context/Actions";
 import { Store } from "../context/Store";
 
 export default function OrderScreen(props) {
@@ -83,7 +83,7 @@ export default function OrderScreen(props) {
     };
 
     const previewOrderHandler = () => {
-        props.history.push(`/review`);
+        props.history.push("/review");
     };
 
     return (

@@ -7,9 +7,9 @@ import {
     CardMedia,
     Fade,
     Typography,
-} from '@material-ui/core';
+} from "@material-ui/core";
 import { useStyles } from "../styles";
-import { setOrderType } from '../context/Actions';
+import { setOrderType } from "../context/Actions";
 import { Store } from "../context/Store";
 
 export default function ChooseScreen(props) {

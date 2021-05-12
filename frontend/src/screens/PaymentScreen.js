@@ -4,8 +4,8 @@ import {
     Button, 
     CircularProgress, 
     Typography 
-} from '@material-ui/core';
-import { useStyles } from '../styles';
+} from "@material-ui/core";
+import { useStyles } from "../styles";
 
 export default function CompleteOrderScreen(props) {
   const styles = useStyles();
@@ -36,7 +36,7 @@ export default function CompleteOrderScreen(props) {
       </Box>
       <Box className={[styles.center, styles.space]}>
         <Button
-          onClick={() => props.history.push('/complete')}
+          onClick={() => props.history.push("/complete")}
           variant="contained"
           className={styles.largeButton2}
         >

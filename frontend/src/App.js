@@ -5,7 +5,7 @@ import {
   CssBaseline,
   Paper,
   ThemeProvider,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
 import HomeScreen from "./screens/HomeScreen";
 import ChooseScreen from "./screens/ChooseScreen";
