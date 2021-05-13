@@ -18,7 +18,8 @@ React-Context is used for state management of orders
 ### Admin/Queue
 Restaurant and front-of-house employees may view/cancel/deliver orders through an admin screen and display a queue for backlogged/fulfilled orders.
 These are public routes for the purposes of this demo.
-[Admin Screen](https://irasshaimase-demo.herokuapp.com/admin)
-[Queue Screen](https://irasshaimase-demo.herokuapp.com/queue) 
+<br/>
+[Admin Screen](https://irasshaimase-demo.herokuapp.com/admin) <br/>
+[Queue Screen](https://irasshaimase-demo.herokuapp.com/queue) <br/>
 ![](demo/irrqueueadmin.gif)
 
