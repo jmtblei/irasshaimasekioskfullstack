@@ -5,6 +5,7 @@ import {
   createMuiTheme,
   CssBaseline,
   Paper,
+  StylesProvider,
   ThemeProvider,
 } from "@material-ui/core";
 import { Helmet } from "react-helmet";
@@ -68,6 +69,7 @@ function App() {
         </title>
       </Helmet>
       <ThemeProvider theme={theme}>
+        <StylesProvider injectFirst>
           <CssBaseline />
           <Container maxWidth={state.widthScreen ? 'lg' : 'sm'}>
             <Paper>
@@ -82,6 +84,7 @@ function App() {
               <Route path="/admin" component={AdminScreen} exact></Route>
             </Paper>
           </Container>
+        </StylesProvider>
         </ThemeProvider>
     </BrowserRouter>
   );
