@@ -189,4 +189,4 @@ export const useStyles = makeStyles((theme) => ({
             border: "1px solid #EBF6F7",
         },
     },
-}));
+}), {index: 1});
