@@ -25,7 +25,7 @@ export default function AdminScreen() {
   
   useEffect(() => {
     listOrders(dispatch);
-  }, []);
+  }, [dispatch]);
 
   const setOrderStateHandler = async (order, action) => {
     try {

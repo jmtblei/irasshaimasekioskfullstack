@@ -21,7 +21,7 @@ export default function QueueScreen() {
 
   useEffect(() => {
     listQueue(dispatch);
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box className={[styles.root, styles.aijiro]}>

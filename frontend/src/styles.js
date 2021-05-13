@@ -21,6 +21,19 @@ export const useStyles = makeStyles((theme) => ({
         backgroundColor: "#EBF6F7",
         color: "#780109"
     },
+    //Info
+    betweenPad: {
+        display: "flex",
+        justifyContent: 'space-between',
+        padding: 5,
+    },
+    infoButton: {
+        color: "#EBF6F7",
+        "&:hover": {
+            color: "#EBF6F7",
+            backgroundColor: "#D87C63",
+        },
+    },
     //HomeScreen
     root: {
         height: "100vh",

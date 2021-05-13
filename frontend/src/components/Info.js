@@ -15,6 +15,8 @@ import {
     GitHub, 
     LinkedIn, 
     Web, 
+    Queue,
+    SupervisorAccount,
 } from "@material-ui/icons";
 import { useStyles } from "../styles";
 
@@ -31,10 +33,10 @@ export default function Info() {
     };
 
     return (
-        <Box className={[styles.crimson]}>
-            <Button color="primary" onClick={handleClickOpen}>
+        <Box className={[styles.crimson, styles.betweenPad]}>
+            <IconButton className={styles.infoButton} onClick={handleClickOpen}>
                 <Help />
-            </Button>
+            </IconButton>
             <Dialog
                 open={isOpen}
                 onClose={handleClose}
@@ -100,6 +102,32 @@ export default function Info() {
                 </Button>
                 </DialogActions>
             </Dialog>
+            <Box>
+                <a
+                    href="https://irasshaimase-demo.herokuapp.com/queue"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <IconButton
+                        aria-label="queue"
+                        className={styles.infoButton}
+                    >
+                    <Queue />
+                    </IconButton>
+                </a>
+                <a
+                    href="https://irasshaimase-demo.herokuapp.com/admin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <IconButton
+                        aria-label="admin"
+                        className={styles.infoButton}
+                    >
+                    <SupervisorAccount />
+                    </IconButton>
+                </a>
+            </Box>
         </Box>
     );
 }
