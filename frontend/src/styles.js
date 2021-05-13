@@ -11,10 +11,11 @@ export const useStyles = makeStyles((theme) => ({
     //Colors
     pink: {
         backgroundColor: "#D87C63",
-        color: "#EBF6F7"
+        color: "#EBF6F7",
     },
     crimson: {
         backgroundColor: "#780109",
+        color: "#EBF6F7",
     },
     aijiro: {
         backgroundColor: "#EBF6F7",

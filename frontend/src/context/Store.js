@@ -204,8 +204,8 @@ function reducer(state, action) {
             };
         case ORDER_LIST_SUCCESS:
             return {
-            ...state,
-            orderList: { loading: false, orders: action.payload },
+                ...state,
+                orderList: { loading: false, orders: action.payload },
             };
         case ORDER_LIST_FAIL:
             return {

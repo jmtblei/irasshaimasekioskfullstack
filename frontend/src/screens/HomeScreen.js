@@ -8,15 +8,18 @@ import {
 import TouchAppIcon from "@material-ui/icons/TouchApp";
 import { useStyles } from "../styles";
 
+import Info from "../components/Info";
 import Bottom from "../components/Bottom";
 
 export default function HomeScreen(props) {
     const styles = useStyles();
+    
     return (
         <Card>
-            <CardActionArea onClick={() => props.history.push("/choose")}>
-                <Box className={[styles.root, styles.pink]}>    
-                    <Box className={[styles.main, styles.center]}>
+            <CardActionArea>
+                <Box className={[styles.root, styles.pink]}>
+                    <Info />    
+                    <Box className={[styles.main, styles.center]} onClick={() => props.history.push("/choose")}>
                         <Typography
                             component="h3"
                             variant="h3"

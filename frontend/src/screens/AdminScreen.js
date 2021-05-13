@@ -38,6 +38,17 @@ export default function AdminScreen() {
     }
   };
 
+  const delOrderHandler = async (order, action) => {
+    try {
+      await axios.delete("/api/orders/" + order._id, {
+        action: action,
+      });
+      listOrders(dispatch);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   return (
     <Box className={[styles.root, styles.pink]}>
       <Helmet>
@@ -102,7 +113,7 @@ export default function AdminScreen() {
                       </Button>
                       <Button
                         variant="contained"
-                        onClick={() => setOrderStateHandler(order, "cancel")}
+                        onClick={() => delOrderHandler(order, "cancel")}
                         className={styles.redButton}
                       >
                         Cancel
