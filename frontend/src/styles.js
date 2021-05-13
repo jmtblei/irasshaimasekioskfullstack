@@ -155,8 +155,8 @@ export const useStyles = makeStyles((theme) => ({
         },    
     },
     //QueueScreen
-    queueGrids: {
-        padding: 10,
+    queueCards: {
+        border: "1px solid #780109",
     },
     queueTitle: {
         paddingTop: 20,
@@ -164,5 +164,28 @@ export const useStyles = makeStyles((theme) => ({
     },
     queueNumbers: {
         paddingLeft: 10,
+    },
+    //AdminScreen
+    greenButton: {
+        marginLeft: 5,
+        color: "#780109",
+        backgroundColor: "#D0F0C0",
+        border: "1px solid #780109",
+        "&:hover": {
+            color: "#EBF6F7",
+            backgroundColor: "#5B8930",
+            border: "1px solid #EBF6F7",
+        },
+    },
+    redButton: {
+        marginLeft: 5,
+        color: "#EBF6F7",
+        backgroundColor: "#D87C63",
+        border: "1px solid #780109",
+        "&:hover": {
+            color: "#EBF6F7",
+            backgroundColor: "#780109",
+            border: "1px solid #EBF6F7",
+        },
     },
 }));

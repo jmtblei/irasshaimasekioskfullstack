@@ -17,6 +17,9 @@ import {
   ORDER_QUEUE_LIST_REQUEST,
   ORDER_QUEUE_LIST_SUCCESS,
   ORDER_QUEUE_LIST_FAIL,
+  ORDER_LIST_REQUEST,
+  ORDER_LIST_SUCCESS,
+  ORDER_LIST_FAIL,
 } from "./Constants";
 import axios from "axios";
 
@@ -117,6 +120,23 @@ export const listQueue = async (dispatch) => {
   } catch (error) {
     return dispatch({
       type: ORDER_QUEUE_LIST_FAIL,
+      payload: error.message,
+    });
+  }
+};
+
+export const listOrders = async (dispatch) => {
+  dispatch({ type: ORDER_LIST_REQUEST });
+  try {
+    const { data } = await axios.get("/api/orders");
+    dispatch({ type: SCREEN_SET_WIDTH });
+    return dispatch({
+      type: ORDER_LIST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    return dispatch({
+      type: ORDER_LIST_FAIL,
       payload: error.message,
     });
   }

@@ -21,6 +21,9 @@ import {
     ORDER_QUEUE_LIST_REQUEST,
     ORDER_QUEUE_LIST_SUCCESS,
     ORDER_QUEUE_LIST_FAIL,
+    ORDER_LIST_REQUEST,
+    ORDER_LIST_SUCCESS,
+    ORDER_LIST_FAIL,
 } from "./Constants";
 
 export const Store = createContext();
@@ -44,7 +47,12 @@ const initialState = {
     orderCreate: { 
         loading: true 
     },
-    queueList: { loading: true },
+    queueList: { 
+        loading: true 
+    },
+    orderList: { 
+        loading: true 
+    },
 };
 
 function reducer(state, action) {
@@ -188,6 +196,21 @@ function reducer(state, action) {
             return {
                 ...state,
                 queueList: { loading: false, error: action.payload },
+            };
+        case ORDER_LIST_REQUEST:
+            return { 
+                ...state, 
+                orderList: { loading: true } 
+            };
+        case ORDER_LIST_SUCCESS:
+            return {
+            ...state,
+            orderList: { loading: false, orders: action.payload },
+            };
+        case ORDER_LIST_FAIL:
+            return {
+                ...state,
+                orderList: { loading: false, error: action.payload },
             };
         default: 
             return state;

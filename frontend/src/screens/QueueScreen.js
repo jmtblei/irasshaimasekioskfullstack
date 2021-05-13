@@ -34,9 +34,9 @@ export default function QueueScreen() {
         ) : error ? (
           <Alert severity="error">{error}</Alert>
         ) : (
-          <Grid container spacing={2} className={styles.queueGrids}>
+          <Grid container spacing={2} className={styles.space}>
             <Grid item md={6}>
-              <Paper className={[styles.pink]}>
+              <Paper className={[styles.pink, styles.queueCards]}>
                     <Typography
                         gutterBottom
                         variant="h3"
@@ -44,7 +44,7 @@ export default function QueueScreen() {
                         color="primary"
                         className={styles.queueTitle}
                     >
-                        Orders In Progress
+                        Orders In Progress:
                     </Typography>
                 <List>
                   {queue.inProgressOrders.map((order) => (
@@ -64,7 +64,7 @@ export default function QueueScreen() {
               </Paper>
             </Grid>
             <Grid item md={6}>
-              <Paper className={[styles.pink]}>
+              <Paper className={[styles.pink, styles.queueCards]}>
                     <Typography
                         gutterBottom
                         variant="h3"
@@ -72,7 +72,7 @@ export default function QueueScreen() {
                         color="primary"
                         className={styles.queueTitle}
                     >
-                        Now Serving
+                        Now Serving:
                     </Typography>
                 <List>
                   {queue.servingOrders.map((order) => (

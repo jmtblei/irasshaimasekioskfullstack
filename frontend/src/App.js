@@ -18,6 +18,7 @@ import SelectPaymentScreen from "./screens/SelectPaymentScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import CompleteOrderScreen from "./screens/CompleteOrderScreen";
 import QueueScreen from "./screens/QueueScreen";
+import AdminScreen from "./screens/AdminScreen";
 
 const theme = createMuiTheme({
   typography: {
@@ -78,6 +79,7 @@ function App() {
               <Route path="/payment" component={PaymentScreen} exact></Route>
               <Route path="/complete" component={CompleteOrderScreen} exact></Route>
               <Route path="/queue" component={QueueScreen} exact></Route>
+              <Route path="/admin" component={AdminScreen} exact></Route>
             </Paper>
           </Container>
         </ThemeProvider>
