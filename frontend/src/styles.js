@@ -168,6 +168,9 @@ export const useStyles = makeStyles((theme) => ({
             border: "1px solid #D87C63",
         },    
     },
+    done: {
+        fontSize: 150
+    },
     //QueueScreen
     queueCards: {
         border: "1px solid #780109",
