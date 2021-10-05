@@ -91,7 +91,7 @@ export default function Info() {
                     </a>
                     <br />
                     <p>
-                        <b>Benson Lei</b> | Software Engineer &copy; 2021
+                        <b>Benson Lei</b> | Full Stack Developer &copy; 2021
                     </p>
                     </div>
                 </Typography>
