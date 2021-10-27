@@ -17,6 +17,8 @@ import { useStyles } from "../styles";
 import axios from "axios";
 import { Store } from "../context/Store";
 import { listOrders } from "../context/Actions";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'; 
 
 export default function AdminScreen() {
   const styles = useStyles();
@@ -33,6 +35,13 @@ export default function AdminScreen() {
         action: action,
       });
       listOrders(dispatch);
+      toast.success(
+        action === "deliver" ? `Order ${order.number} set to DELIVERED`
+        : `Order ${order.number} set to READY`,
+        {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            autoClose:3000
+        });
     } catch (err) {
       alert(err.message);
     }
@@ -44,6 +53,11 @@ export default function AdminScreen() {
         action: action,
       });
       listOrders(dispatch);
+      toast.success(`Order ${order.number} set to CANCELLED`,
+        {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            autoClose:3000
+        });
     } catch (err) {
       alert(err.message);
     }
@@ -56,6 +70,7 @@ export default function AdminScreen() {
       </Helmet>
 
       <Box className={[styles.main, styles.space]}>
+      <ToastContainer />
         {loading ? (
           <CircularProgress />
         ) : error ? (
@@ -67,9 +82,9 @@ export default function AdminScreen() {
                 <TableRow>
                   <TableCell>Order Number</TableCell>
                   <TableCell align="right">Price&nbsp;($)</TableCell>
-                  <TableCell align="right">Count</TableCell>
-                  <TableCell align="right">Items</TableCell>
-                  <TableCell align="right">Type</TableCell>
+                  <TableCell align="right">Item Types</TableCell>
+                  <TableCell align="right">Order</TableCell>
+                  <TableCell align="right">OrderType</TableCell>
                   <TableCell align="right">Payment</TableCell>
                   <TableCell align="right">State</TableCell>
                   <TableCell align="right">Actions</TableCell>
