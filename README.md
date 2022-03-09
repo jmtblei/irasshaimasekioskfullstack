@@ -23,3 +23,16 @@ These are public routes for the purposes of this demo.
 [Queue Screen](https://irasshaimase-demo.herokuapp.com/queue) <br/>
 ![](demo/irrqueueadmin.gif)
 
+--------------------------------------
+
+## Installation Intructions:
+Clone this repository. In the root directory, install dependencies in with `npm install` or `yarn install`.
+
+## Environment Variables:
+In order for the app to function correctly, the user must provide their own API keys in their builds.
+* MONGO_URI - You must supply your own MongoDB Atlas URI string to connect to your DB.
+
+## Other Scripts:
+* In the root directory, run `npm run start`and `npm run server` to connect your backend server.
+* In the root directory, run `npm run data:import` to import the pre-seeded data cluster to your MongoDB Atlas connection.
+* In the root directory, run `npm run dev` to concurrently start your backend and frontend server.
