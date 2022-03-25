@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { 
     Box, 
     Button,
@@ -103,30 +104,22 @@ export default function Info() {
                 </DialogActions>
             </Dialog>
             <Box>
-                <a
-                    href="https://irasshaimase-demo.herokuapp.com/queue"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <Link target="_blank" to={`/queue`}>
                     <IconButton
                         aria-label="queue"
                         className={styles.infoButton}
                     >
                     <Queue />
                     </IconButton>
-                </a>
-                <a
-                    href="https://irasshaimase-demo.herokuapp.com/admin"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                </Link>
+                <Link target="_blank" to={`/admin`}>
                     <IconButton
                         aria-label="admin"
                         className={styles.infoButton}
                     >
                     <SupervisorAccount />
                     </IconButton>
-                </a>
+                </Link>
             </Box>
         </Box>
     );
