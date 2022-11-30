@@ -1,3 +1,5 @@
+*AS OF 28 NOVEMBER 2022, HEROKU FREE DYNOS HAVE BECOME DEPRACATED AND WILL LONGER BE MAINTAINED FOR THIS PROJECT - YOU MAY EXPERIENCE ISSUES WITH CONNECTING TO THE DB*
+
 # Irasshaimase
 ### [Live Demo](https://irasshaimase-demo.herokuapp.com/ "Live Demo of Irasshaimase")
 
@@ -31,6 +33,8 @@ Clone this repository. In the root directory, install dependencies in with `npm 
 ## Environment Variables:
 In order for the app to function correctly, the user must provide their own API keys in their builds.
 * MONGO_URI - You must supply your own MongoDB Atlas URI string to connect to your DB.
+
+*AS OF 28 NOVEMBER 2022, HEROKU FREE DYNOS HAVE BECOME DEPRACATED AND WILL LONGER BE MAINTAINED FOR THIS PROJECT - YOU MAY EXPERIENCE ISSUES WITH CONNECTING TO THE DB*
 
 ## Other Scripts:
 * In the root directory, run `npm run start`and `npm run server` to connect your backend server.
